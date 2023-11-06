@@ -1,5 +1,6 @@
 import Input from "@/component/input";
 import {useCallback, useState} from "react";
+import axios from "axios";
 
 const Auth = () => {
 
@@ -11,6 +12,10 @@ const Auth = () => {
 
     const toggleVariant = useCallback (() => {
         setVariant((currentVariant) => currentVariant === 'login' ? 'register' : 'login');
+    }, []);
+
+    const register = useCallback(async () => {
+
     }, []);
 
 

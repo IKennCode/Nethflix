@@ -42,5 +42,15 @@ export default NextAuth ({
                   return user;
             }
         })
-    ]
-})
+    ],
+
+    pages: {
+        signIn: '/auth',
+    },
+
+    debug: process.env.NODE_ENV === 'development',
+    jwt: {
+        secret: process.env.NEXTAUTH_JWT_SECRET,
+      },
+        secret: process.env.NEXTAUTH_SECRET,
+});
