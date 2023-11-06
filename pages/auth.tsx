@@ -26,7 +26,7 @@ const Auth = () => {
             console.log(error);
         }
 
-    }, []);
+    }, [email, name, password]);
 
 
 
@@ -46,9 +46,11 @@ const Auth = () => {
 
                             <Input label="Email" onChange={(ev: any) => setEmail(ev.target.value)} id="email" type="email" value={email} />
                             <Input label="Password" onChange={(ev:any) => setPassword(ev.target.value)} id="password" type="password" value={password} />
-                            <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">{variant === 'login' ? 'Login' : 'Sign Up'}</button>
-                            <p className="text-neutral-500 mt-12"> {variant === 'login' ? 'First Time using Netflix?' : 'Already have an Account?'}
-                            <span onClick={toggleVariant} className="text-white ml-1 hover:underline cursor-pointer">{variant === 'login' ? 'Create an Account ' : 'Login'}</span>
+                            <button onClick={register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">{variant === 'login' ? 'Login' : 'Sign Up'}</button>
+                            <p className="text-neutral-500 mt-12"> 
+                                {variant === 'login' ? 'First Time using Netflix?' : 'Already have an Account?'}
+                            <span onClick={toggleVariant} className="text-white ml-1 hover:underline cursor-pointer">
+                                {variant === 'login' ? 'Create an Account ' : 'Login'}</span>
                             </p>
 
                         </div>
