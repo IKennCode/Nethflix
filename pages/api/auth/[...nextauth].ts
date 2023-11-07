@@ -7,6 +7,8 @@ import GoogleProvider from 'next-auth/providers/google';
 
 import prismadb from '@/lib/prismadb';
 
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+
 export default NextAuth ({
     providers: [
         GithubProvider({
@@ -60,6 +62,7 @@ export default NextAuth ({
     },
 
     debug: process.env.NODE_ENV === 'development',
+    adapter: PrismaAdapter(prismadb),
     jwt: {
         secret: process.env.NEXTAUTH_JWT_SECRET,
       },
